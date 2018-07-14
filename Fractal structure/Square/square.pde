@@ -2,9 +2,9 @@ float alpha = 0.1;
 void setup()
 {
   size(600,600);
-  Fractorial(new Point(100,100),new Point(500,100),new Point(500,500), new Point(100,500),100);
+  buildFract(new Point(100,100),new Point(500,100),new Point(500,500), new Point(100,500),100);
 }
-void Fractorial(Point A,Point B, Point C, Point D, int deep)
+void buildFract(Point A,Point B, Point C, Point D, int deep)
 {
   if(deep == 0) return;
   else
