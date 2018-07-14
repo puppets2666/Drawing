@@ -1,20 +1,28 @@
-class A
+float alpha = 0.1;
+void setup()
 {
-  int i;
-  A()
+  size(600,600);
+  Fractorial(new Point(100,100),new Point(500,100),new Point(500,500), new Point(100,500),100);
+}
+void Fractorial(Point A,Point B, Point C, Point D, int deep)
 {
-  i = int(random(200));
+  if(deep == 0) return;
+  else
+  {
+    Point A1 = new Point(A.x *(1 - alpha)+ B.x * alpha, A.y *(1 - alpha) + B.y * alpha);
+    Point B1 = new Point(B.x *(1 - alpha)+ C.x * alpha, B.y *(1 - alpha) + C.y * alpha);
+    Point C1 = new Point(C.x *(1 - alpha)+ D.x * alpha, C.y *(1 - alpha) + D.y * alpha);
+    Point D1 = new Point(D.x *(1 - alpha)+ A.x * alpha, D.y *(1 - alpha) + A.y * alpha);
+    quad(A.x,A.y,B.x,B.y,C.x,C.y,D.x,D.y);
+    Fractorial(A1, B1, C1, D1, --deep);
+  }
 }
-}
-
-ArrayList<A> al = new ArrayList<A>();
-int size = 50;
-for(int i =0;i < 50; ++i)
+class Point
 {
-al.add(new A());
+float x, y;
+  Point(float x, float y)
+  {
+    this.x =x;
+    this.y=y;
+  }
 }
-for(A a : al)
-{
-  println(a.i);
-}
-exit();
