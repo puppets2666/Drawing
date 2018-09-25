@@ -22,7 +22,7 @@ namespace Shapes.DataModel
 
         public void Undo()
         {
-            if(UndoStack.Count > 0)
+            if(CanUndo)
             {
                 ICommand command = UndoStack.Pop();
                 command.UnExecute();
@@ -34,7 +34,7 @@ namespace Shapes.DataModel
 
         public void Redo()
         {
-            if (RedoStack.Count > 0)
+            if (CanRedo)
             {
                 ICommand command = RedoStack.Pop();
                 command.Execute();
