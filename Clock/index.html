@@ -17,9 +17,9 @@
             translate(200, 200);
             rotate(-90);
             
-            let hr = map(hour(),0, 60, 0, 360);
-            let mt = map(minute(),0, 60, 0, 360);
-            let sc = map(second(),0, 60, 0, 360);
+            let hr = map(hour()%12,0, 12, 0, 360);
+            let mt = map(minute(), 0, 60, 0, 360);
+            let sc = map(second(), 0, 60, 0, 360);
             
             // hours
             strokeWeight(10);
