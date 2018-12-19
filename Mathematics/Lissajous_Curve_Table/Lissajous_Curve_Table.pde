@@ -1,6 +1,6 @@
 float angle = 0;
 float speed = 0.01;
-int circleWidth = 130;
+int circleWidth = 130; // 60
 
 int cols;
 int rows;
