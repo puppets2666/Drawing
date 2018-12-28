@@ -1,2 +1,2 @@
 # Drawing
-Here i post my drawing with code which i found fascinating
+Here I post my drawing with code which I found fascinating
