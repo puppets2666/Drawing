@@ -7,7 +7,7 @@ void setup()
 {
   size(600, 600);
   images = new PImage[] { loadImage("dog.jpg"), loadImage("flower.jpg"), loadImage("mountain.jpg") };
-  filters = new String[] { "original", "junkie", "red",
+  filters = new String[] { "original", "junkie", "red green blue",
                            "rbg", "rg b*2", "grb", "bgr", "r g/2 b/10", 
                            "sepia", "negative", "vignette", "black&white", "brightness",
                            "threshold", "up down", "mirror", "saturation" };
@@ -44,9 +44,12 @@ void draw()
         {
           pixels[pixelIndex] = images[imageIndex].pixels[pixelIndex]/2;
         };break;
-        case 2:// red
+        case 2:// red green blue
         {
-          pixels[pixelIndex] = color(r, 0, 0);
+          if ( x < width/2 && y < height /2)        pixels[pixelIndex] = color(r, g, b);
+          else if ( x >= width/2 && y < height /2)  pixels[pixelIndex] = color(r, 0, 0);
+          else if ( x < width/2 && y >= height /2)  pixels[pixelIndex] = color(0, g, 0);
+          else if ( x >= width/2 && y >= height /2) pixels[pixelIndex] = color(0, 0, b);
         };break;
         case 3:// rbg
         {
