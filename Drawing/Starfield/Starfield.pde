@@ -1,22 +1,20 @@
 final int starsAmount = 1000;
 
-float speed = 1; // global
+float speed;
 
 Star[] stars;
 
 void setup()
 {
   size(800, 800);
+  
+  speed = 1;
+  
   stars = new Star[starsAmount];
   for(int i = 0; i < starsAmount; ++i)
   {
     stars[i] = new Star();
   }
-  // star color
-  fill(220,230,255);
-  noStroke();
-  // trace color
-  stroke(255);
 }
 void draw()
 {
@@ -25,7 +23,7 @@ void draw()
   
   for(int i = 0; i < starsAmount; ++i)
   {
-    stars[i].update();
+    stars[i].update(speed);
     stars[i].show();
   }
 }
