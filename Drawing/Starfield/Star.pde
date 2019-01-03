@@ -16,7 +16,7 @@ class Star
     pz = z;
   }
   // METHODS
-  void update()
+  void update(float speed)
   {
     z -= speed;
     
@@ -30,6 +30,8 @@ class Star
 
     float r = map(z, 0, width, 16, 0);
     
+    fill(220,230,255);
+    noStroke();
     ellipse(sx, sy, r, r);
     
     // trace
@@ -38,12 +40,13 @@ class Star
     
     pz = z;
     
+    stroke(255);
     line(px, py, sx, sy);
   }
   void reset()
   {
-    x = random(-width, width);
-    y = random(-height, height);
+    x = random(-width/2, width/2);
+    y = random(-height/2, height/2);
     z = width;
     
     pz = z;
