@@ -53,7 +53,9 @@ class SinglePendulum
     }
     else
     {      
-      angle = -asin(constrain(origin.x - mouseX, -armLength, armLength)/armLength);
+      angle = -asin(constrain(origin.x - mouseX, -armLength, armLength)/armLength); 
+      angleVelocity = 0;
+      angleAcceleration = 0;
     }
   }
   void show()
