@@ -52,9 +52,10 @@ void drawTrace()
   noFill();
   strokeWeight(6);
   beginShape();
+  int alpha = 0;
   for(ColorDote dot : trace)
   {
-    stroke(130, dot.colorSaturation, 240, 225);
+    stroke(130, dot.colorSaturation, 240, ++alpha);
     vertex(dot.x, dot.y);
   }
   endShape();
@@ -107,7 +108,7 @@ void draw()
   a2_v *= damping;
   
   // remove old trace
-  if(trace.size() > 200)trace.remove();  
+  if(trace.size() > 300)trace.remove();  
 }
 
 void keyPressed()
